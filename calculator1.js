@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const reticulocyteIndexValue = correctedPercent / 2.5;
 
         let anemiaType = correctedPercent > 1 
-            ? "<span class='regenerative'>Regenerativní Anemie</span>" 
-            : "<span class='non-regenerative'>NON-Regenerative Anemie</span>";
+            ? "<span class='regenerative'>Regenerativne Anemia</span>" 
+            : "<span class='non-regenerative'>NON-Regenerative Anemia</span>";
         let regenerationStatus = reticulocyteIndexValue > 1 
             ? "<span class='sufficient-regeneration'>Sufficient Regeneration</span>" 
             : "<span class='insufficient-regeneration'>Insufficient Regeneration</span>";
