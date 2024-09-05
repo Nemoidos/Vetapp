@@ -516,9 +516,9 @@ body.dark-mode {
 body.dark-mode .dropbtn,
 body.dark-mode .navbar-button {
     color: white;
-    background-color:trasparent;
-    box-shadow:none;
+    background-color: transparent;
     border: none;
+    box-shadow: none; /* Ensure no shadow in dark mode */
 }
 
 body.dark-mode .dropdown-content {
