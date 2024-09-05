@@ -1,0 +1,330 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: none; /* Remove the shadow */
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #333;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+    position: relative;
+    box-shadow: none; 
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: none; /* Remove shadow */
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+.navbar-button {
+    background-color: transparent;
+    color: #333;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+    position: relative;
+    box-shadow: none; 
+}
+
+.navbar-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+
+/* Home Button (House Icon) and Dark Mode Toggle */
+#home-button, #dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+#home-button:hover, #dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Language Switcher */
+.language-switcher img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.2);
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    gap: 15px;
+    background-color: #ffffff; /* Light mode background color */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-section label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-section input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 150px;
+    background-color: #ffffff; /* Light mode background */
+    color: #333; /* Text color in light mode */
+}
+
+.input-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Drug Calculation Table */
+.drug-calculation {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Light mode background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#drug-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#drug-table td input[type="number"] {
+    width: 80px; /* Set a smaller width */
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#drug-table th, #drug-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd; /* Adds border between columns */
+}
+
+#drug-table th:last-child, #drug-table td:last-child {
+    border-right: none; /* Removes border on the last column */
+}
+
+#drug-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+#drug-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style for icons inside buttons */
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle;
+}
+
+
+/* Dark Mode Styles */
+html.dark-mode, body.dark-mode {
+    background-color: #121212; /* Set a consistent dark background */
+    color: white; /* Set text color for dark mode */
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+    height: 35px;
+}
+
+/* Dark Mode for Buttons and Text */
+body.dark-mode .dropbtn,
+body.dark-mode .navbar-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    box-shadow: none; /* Ensure no shadow in dark mode */
+
+}
+html.dark-mode {
+    background-color: #121212
+}
+
+body.dark-mode .navbar-button:nth-child(3) {
+    margin-left: 15px; /* Add margin to the left of the "Analýza krevního obrazu" button */
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #444;
+}
+
+body.dark-mode .dropdown-content a {
+    color: white;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode for Hero Section */
+body.dark-mode .hero {
+    background-color: #1a1a1a; /* Darker background for hero section */
+}
+
+body.dark-mode .hero-content {
+    color: white; /* Change hero text color to white */
+}
+
+body.dark-mode .features {
+    background-color: #1a1a1a; /* Darker background for features section */
+}
+
+body.dark-mode .feature {
+    color: white; /* Change text color in features section */
+}
+
+body.dark-mode .how-it-works {
+    background-color: #1a1a1a; /* Darker background for how it works section */
+}
+
+body.dark-mode .steps {
+    color: white; /* Change text color in how it works section */
+}
+
+/* Drug calculation table in dark mode */
+body.dark-mode .drug-calculation {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode #drug-table th {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode #drug-table td {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+body.dark-mode #drug-table tr:hover {
+    background-color: #333;
+}
+
+/* Sections or divs that need specific dark mode styling */
+body.dark-mode section, 
+body.dark-mode div {
+    background-color: #333333; 
+    color: white; 
+
+body.dark-mode .navbar-button {
+    background-color: transparent; /* Ensure transparent background */
+    color: white; /* White text for dark mode */
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove any shadow */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: inline-block; /* Keep buttons inline with no extra spacing */
+}
+
+/* For buttons in the navbar, ensure no background or border */
+body.dark-mode button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    box-shadow: none;
+    padding: 10px; /* Adjust padding if needed */
+    margin: 0; /* Remove any extra margin */
+}
+
+/* Additional hover state adjustments to ensure no black background */
+body.dark-mode button:hover {
+    background-color: #333; /* Darker background on hover if needed */
+    color: #fff; /* Maintain white text color */
+}

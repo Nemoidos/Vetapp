@@ -1,0 +1,561 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    height: 30px;
+    position: relative;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #333;
+    padding: 5px 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 15px;
+    position: relative;
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+.navbar-button {
+    background-color: transparent;
+    color: #333;
+    padding: 5px 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 15px;
+    display: flex; /* Flex container to allow vertical centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    height: 30px; /* Match the navbar height */
+    line-height: normal; /* Reset line height */
+}
+
+.navbar-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+#home-button, #dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px 20px 30px;
+    transition: transform 0.3s ease;
+}
+
+#home-button:hover, #dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.2);
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Center content */
+}
+
+/* Input Field Styles */
+input[type="number"] {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Ensure it doesn't get too wide */
+    text-align: center;
+    position: relative; /* Position relative for centered close button */
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Position absolute for precise control */
+    right: 10px;
+    top: 5px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    max-width: 100%; /* Make sure the image fits within the modal */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#potassium-results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px; /* Slightly larger font size for emphasis */
+    font-weight: bold; /* Make the text bold */
+    color: #0056b3; /* Dark blue text color for visibility */
+    text-align: center; /* Center-align text */
+    line-height: 1.8; /* Increase line height for readability */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+/* Style for a serious alert box */
+.serious-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff4d4d; /* Red background for warning */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+}
+
+#reticulocyte-index {
+    margin-top: 30px;
+}
+
+/* Centering the Calculate Button */
+.calculate-button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Style for the Calculate Button */
+button.calculate-button {
+    padding: 10px 20px; /* Padding for a larger button */
+    font-size: 16px; /* Slightly larger font */
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+button.calculate-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for Results Section */
+#reticulocyte-results {
+    margin-top: 20px; /* Space above the results */
+    padding: 15px;
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px;
+}
+
+.result-container {
+    text-align: center; /* Center align text */
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    padding: 15px; /* Padding around text */
+    margin: 20px auto; /* Center the container with automatic margins */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 400px; /* Set maximum width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.resultsGenCRI {
+    font-size: 20px; /* Slightly larger font */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color for light mode */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+/* Styles for Hypernatremia Result Box in Light Mode */
+.resultsHypernatremia {
+    font-size: 20px; /* Slightly larger font */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color for light mode */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    margin-top: 20px;
+    text-align: center;
+}
+
+}
+
+/* Style for Result Values */
+.result-value {
+    color: #007bff; /* Blue color for result values */
+    font-weight: bold; /* Bold text to emphasize the result */
+    font-size: 1.2em; /* Slightly larger font size */
+    display: inline-block; /* Ensure inline display for consistent layout */
+    margin-bottom: 10px; /* Space below the result */
+}
+
+/* Specific Styles for Non-Regenerative Anemia and Insufficient Regeneration */
+#reticulocyte-results .non-regenerative,
+#reticulocyte-results .insufficient-regeneration {
+    color: red; /* Red text color for emphasis */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Specific Styles for Regenerative Anemia and Sufficient Regeneration */
+#reticulocyte-results .regenerative,
+#reticulocyte-results .sufficient-regeneration {
+    color: green; /* Green text color for positive results */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Container for the species toggle buttons */
+.species-toggle-container {
+    display: flex; /* Flexbox to align items horizontally */
+    gap: 20px; /* Gap between buttons for spacing */
+    justify-content: center; /* Center the buttons in the container */
+    margin-bottom: 20px; /* Space below the buttons */
+}
+
+/* Species Toggle Buttons */
+.species-toggle {
+    background-color: #ddd;
+    border: 2px solid transparent;
+    border-radius: 12px; /* Rounded edges for the square button */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 70px; /* Fixed width to make buttons square */
+    height: 70px; /* Fixed height to make buttons square */
+    display: flex; /* Flex to center icon */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+}
+
+.species-toggle img {
+    width: 50px; /* Adjusted size for the icon */
+    height: 50px;
+}
+
+.species-toggle.selected {
+    background-color: #007bff; /* Highlight color when selected */
+    border-color: #0056b3; /* Border color to indicate selection */
+}
+
+.species-toggle.selected img {
+    filter: brightness(1.5); /* Brighten the icon when selected */
+}
+
+/* Hover effect for buttons */
+.species-toggle:hover {
+    background-color: #e0e0e0;
+}
+
+.alert-box {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* General result box styling */
+.nutrition-results-container {
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #333; /* Text color for light mode */
+}
+
+/* Style for the RER result text */
+.nutrition-results-container .rer-result {
+    color: #5252ff; /* Blue color for the RER text */
+    font-weight: bold; /* Bold text for emphasis */
+    text-align: center;
+    display: block;
+}
+
+/* Styles for Norepinephrine result container */
+.result-norepinephrine {
+    background-color: #e7f3fe; /* Light blue background for clarity */
+    border: 2px solid #b3d4fc; /* Slightly darker border to make it stand out */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center ;
+}
+
+.result-norepinephrine p {
+    margin: 0;
+    padding: 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ensure dark mode readability for the nutrition results container */
+body.dark-mode .nutrition-results-container {
+    background-color: #333333; /* Darker background for dark mode */
+    color: #fff; /* White text color for contrast */
+    text-align: center;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .nutrition-results-container {
+    background-color: #333; /* Dark mode background */
+    color: #fff; /* Text color for dark mode */
+}
+
+/* Table-like layout for food conversions */
+.nutrition-results-container table {
+    width: 100%; /* Full width for table */
+    border-collapse: collapse; /* Remove space between table cells */
+    margin-top: 10px; /* Space above the table */
+}
+
+.nutrition-results-container th, .nutrition-results-container td {
+    text-align: left; /* Align text to the left */
+    padding: 8px; /* Padding inside cells */
+}
+
+.nutrition-results-container th {
+    width: 70%; /* Set width for food name column */
+}
+
+.nutrition-results-container td {
+    width: 30%; /* Set width for grams column */
+}
+
+/* Dark mode for table cells */
+body.dark-mode .nutrition-results-container th, body.dark-mode .nutrition-results-container td {
+    border-bottom: 1px solid #444; /* Border for table rows in dark mode */
+}
+
+
+/* Dark Mode Styles for Inputs and Results */
+body.dark-mode input[type="number"] {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+body.dark-mode #potassium-results {
+    background-color: #1a1a1a; /* Darker background for dark mode */
+    border-color: #333; /* Border color for dark mode */
+    color: #f1c40f; /* Bright yellow text color for contrast */
+}
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+}
+
+/* Dark Mode for Buttons and Text */
+body.dark-mode .dropbtn,
+body.dark-mode .navbar-button {
+    color: white;
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #444;
+}
+
+body.dark-mode .dropdown-content a {
+    color: white;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* Dark Mode Styles for Modal */
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+/* Background color for dark mode */
+body.dark-mode .result-container {
+    background-color: #fdf5e6; /* Yellowish ivory background color in dark mode */
+}
+body.dark-mode .result-norepinephrine {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .result-norepinephrine p {
+    color: white; /* Ensures all text is white in dark mode */
+}
+
+/* Dark Mode Styles for Hypernatremia Result Box */
+body.dark-mode .resultsHypernatremia {
+    background-color: #444; /* Dark background for dark mode */
+    color: #fff; /* Light text color for readability in dark mode */
+    border: 2px solid #666; /* Slightly lighter border in dark mode */
+}
+
+/* Dark Mode Styles for Results Box */
+body.dark-mode .resultsGenCRI {
+    background-color: #444; /* Dark background for dark mode */
+    color: #fff; /* Light text color for readability in dark mode */
+    border: 2px solid #666; /* Slightly lighter border in dark mode */

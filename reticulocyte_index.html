@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reticulocyte Calculator</title>
+    <link rel="stylesheet" href="calculator1.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Navbar Left Section -->
+        <div class="navbar-left">
+            <!-- Dropdown for Clinical Calculations -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('clinicalDropdown')">Clinical Calculators</button>
+                <div class="dropdown-content" id="clinicalDropdown">
+                    <a href="potassium_correction.html">Potassium Correction</a>
+                    <a href="reticulocyte_index.html">Reticulocyte Index</a>
+                    <a href="nutrition.html" onclick="nutritionRER()">Nutrition RER</a>
+                    <a href="norepinefrine.html" onclick="norepinephrineCRI()">Norepinefrine CRI</a>
+                    <a href="GeneralCRI.html" onclick="generalCRI()">General CRI</a>
+                    <a href="Hypernatremia.html" onclick="hypernatremiaCorrection()">Hypernatremia Correction</a>
+                    <a href="#" onclick="transfusionCalculation()">Transfusion</a>
+                    <a href="#" onclick="infusionTherapy()">Fluid Therapy</a>
+                    <a href="#" onclick="pillsCalculator()">Pills Counter</a>
+                    <a href="emergency_calculator.html" onclick="emergency_calculator()">Emergency Calculator</a>
+                </div>
+            </div>
+            <!-- Button for Poison Calculator -->
+            <button class="navbar-button" onclick="poisonCalculator()">Poison App</button>
+            <!-- Button for Bloodwork Analysis -->
+            <button class="navbar-button" onclick="bloodworkAnalysis()">BloodWork</button>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <!-- Dark Mode Toggle (moon symbol) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+            <!-- Home Button (House Icon) -->
+            <button id="home-button" onclick="window.location.href='index.html'" title="Home">🏠</button>
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <a href="#" onclick="switchToEnglish()">
+                    <img src="flag-icon.png" alt="Switch to English" title="Switch to English">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Reticulocyte Index Calculator Section -->
+    <main id="calculator-container">
+        <div id="reticulocyte-index" class="calculator-section">
+            <h2>Reticulocyte Index Calculator</h2>
+            
+            <!-- Toggle Buttons for Species Selection -->
+           <div class="species-toggle-container">
+                <!-- Toggle Button for Dog -->
+                <button id="dog-toggle" class="species-toggle" onclick="selectSpecies('dog')">
+                    <img src="dog-icon.png" alt="Dog" title="Dog">
+                </button>
+
+                <!-- Toggle Button for Cat -->
+                <button id="cat-toggle" class="species-toggle" onclick="selectSpecies('cat')">
+                    <img src="cat-icon.png" alt="Cat" title="Cat">
+                </button></div>
+
+            <!-- Patient's Hematocrit Input Field -->
+            <label for="hematocrit-patient">Hematocrit Patient (%):</label>
+            <input type="number" id="hematocrit-patient" placeholder="Enter patient's hematocrit" min="0">
+
+            <!-- Reticulocyte Percentage Input Field -->
+            <label for="reticulocyte-percent">Reticulocytes (%):</label>
+            <input type="number" id="reticulocyte-percent" placeholder="Enter reticulocyte percentage" min="0">
+
+            <!-- Calculate Button -->
+            <button onclick="calculateReticulocyteIndex()">Calculate</button>
+            <div id="reticulocyte-results" class="result-container"></div>
+
+        </div>
+    </main>
+
+    <!-- Modals for alerts and dog image here... -->
+<div id="alert-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('alert-modal')">&times;</span>
+        <p id="alert-message"></p>
+    </div>
+</div>
+
+<!-- Modal for Funny Dog Image -->
+<div id="dog-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('dog-modal')">&times;</span>
+        <img src="dogknows.jpg" alt="The Dog Knows" style="max-width: 100%; height: auto;">
+    </div>
+</div>
+    <script src="calculator1.js"></script>
+</body>
+</html>

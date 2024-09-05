@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Drug Calculator</title>
+    <link rel="stylesheet" href="emergency_calculator.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Navbar Left Section -->
+        <div class="navbar-left">
+            <!-- Dropdown for Clinical Calculations -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('clinicalDropdown')">Clinical Calculators</button>
+                <div class="dropdown-content" id="clinicalDropdown">
+                    <a href="potassium_correction.html">Potassium Correction</a>
+                    <a href="reticulocyte_index.html">Reticulocyte Index</a>
+                    <a href="nutrition.html" onclick="nutritionRER()">Nutrition RER</a>
+                    <a href="norepinefrine.html" onclick="norepinephrineCRI()">Norepinefrine CRI</a>
+                    <a href="GeneralCRI.html" onclick="generalCRI()">General CRI</a>
+                    <a href="Hypernatremia.html" onclick="hypernatremiaCorrection()">Hypernatremia Correction</a>
+                    <a href="#" onclick="transfusionCalculation()">Transfusion</a>
+                    <a href="#" onclick="infusionTherapy()">Fluid Therapy</a>
+                    <a href="#" onclick="pillsCalculator()">Pills Counter</a>
+                </div>
+            </div>
+
+            <!-- Button for Poison Calculator -->
+            <button class="navbar-button" onclick="poisonCalculator()">Poison App</button>
+
+            <!-- Button for Bloodwork Analysis -->
+            <button class="navbar-button" onclick="bloodworkAnalysis()">BloodWork</button>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <!-- Home Button (House Icon) -->
+            <button id="home-button" onclick="window.location.href='index.html'" title="Home">
+                🏠
+            </button>
+
+            <!-- Dark Mode Toggle (moon symbol) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <a href="#" onclick="switchToEnglish()">
+                    <img src="flag-icon.png" alt="Switch to English" title="Switch to English">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Input Section -->
+<section class="input-section">
+    <label for="animal-weight">Animal Weight (kg):</label>
+    <input type="number" id="animal-weight" placeholder="Enter weight in kg">
+    <button onclick="calculateDoses('dog')">
+        <img src="dog-icon.png" alt="Dog Icon" class="button-icon"> Calculate for Dogs
+    </button>
+    <button onclick="calculateDoses('cat')">
+        <img src="cat-icon.png" alt="Cat Icon" class="button-icon"> Calculate for Cats
+    </button>
+</section>
+
+
+    <!-- Drug Calculation Table -->
+    <section class="drug-calculation">
+        <table id="drug-table">
+            <thead>
+                <tr>
+                    <th>Drug Name</th>
+                    <th>Dosage & Route</th>
+                    <th>Concentration (mg/mL)</th>
+                    <th>Dose (mg/kg) / Total Dose (mg)</th>
+                    <th>Volume to Draw (mL)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows for each drug will be dynamically inserted here using JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Link to external JavaScript file -->
+    <script src="emergency_calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinární Kalkulačka</title>
+    <link rel="stylesheet" href="calculator1.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Navbar Left Section -->
+        <div class="navbar-left">
+            <!-- Dropdown for Clinical Calculations -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('clinicalDropdown')">Clinical Calculators</button>
+                <div class="dropdown-content" id="clinicalDropdown">
+                    <a href="potassium_correction.html">Potassium Correction</a>
+                    <a href="reticulocyte_index.html">Reticulocyte Index</a>
+                    <a href="nutrition.html" onclick="nutritionRER()">Nutrition RER</a>
+                    <a href="norepinefrine.html" onclick="norepinephrineCRI()">Norepinefrine CRI</a>
+                    <a href="GeneralCRI.html" onclick="generalCRI()">General CRI</a>
+                    <a href="Hypernatremia.html" onclick="hypernatremiaCorrection()">Hypernatremia Correction</a>
+                    <a href="#" onclick="transfusionCalculation()">Transfusion</a>
+                    <a href="#" onclick="infusionTherapy()">Fluid Therapy</a>
+                    <a href="#" onclick="pillsCalculator()">Pills Counter</a>
+                    <a href="emergency_calculator.html" onclick="emergency_calculator()">Emergency Calculator</a>
+                </div>
+            </div>
+
+            <!-- Button for Poison Calculator -->
+            <button class="navbar-button" onclick="poisonCalculator()">Poison App</button>
+
+            <!-- Button for Bloodwork Analysis -->
+            <button class="navbar-button" onclick="bloodworkAnalysis()">BloodWork</button>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <!-- Dark Mode Toggle (moon symbol) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+             <!-- Home Button (House Icon) -->
+            <button id="home-button" onclick="window.location.href='index.html'" title="Home">
+                🏠
+            </button>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <a href="#" onclick="switchToEnglish()">
+                    <img src="flag-icon.png" alt="Switch to English" title="Switch to English">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main id="general-cri-container" class="calculator-section">
+        <h2>General CRI Calculator</h2>
+
+        <!-- Syringe Size Selection -->
+        <div class="input-group">
+            <label for="syringe-10ml-genCRI">Syringe Size (ml):</label>
+            <div>
+                <input type="radio" id="syringe-10ml-genCRI" name="syringe-size-genCRI" value="10" checked>
+                <label for="syringe-10ml-genCRI">10ml</label>
+                <input type="radio" id="syringe-20ml-genCRI" name="syringe-size-genCRI" value="20">
+                <label for="syringe-20ml-genCRI">20ml</label>
+                <input type="radio" id="syringe-50ml-genCRI" name="syringe-size-genCRI" value="50">
+                <label for="syringe-50ml-genCRI">50ml</label>
+            </div>
+        </div>
+        <!-- Animal Weight Input (Unique ID) -->
+        <div class="input-group">
+            <label for="animal-weight-genCRI">Animal Weight (kg):</label>
+            <input type="number" id="animal-weight-genCRI" placeholder="Enter weight in kg">
+        </div>
+
+        <!-- Dose and Concentration Input -->
+        <div class="input-group">
+            <label for="dose-mg-kg-hour-genCRI">Dose (mg/kg/hour):</label>
+            <input type="number" id="dose-mg-kg-hour-genCRI" placeholder="Enter dose in mg/kg/hour">
+        </div>
+
+        <div class="input-group">
+            <label for="concentration-mg-ml-genCRI">Concentration (mg/ml):</label>
+            <input type="number" id="concentration-mg-ml-genCRI" value="1" placeholder="Enter concentration in mg/ml">
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calculate-general-cri-btn-genCRI">Calculate</button>
+
+        <!-- Updated Results Display -->
+        <div id="general-cri-results-genCRI" class="resultsGenCRI"></div>
+    </main>
+
+    <script src="calculator1.js"></script>
+</body>
+</html>

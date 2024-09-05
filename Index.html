@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinární Kalkulačka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Navbar Left Section -->
+        <div class="navbar-left">
+            <!-- Dropdown for Clinical Calculations -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('clinicalDropdown')">Clinical Calculators</button>
+                <div class="dropdown-content" id="clinicalDropdown">
+                    <a href="potassium_correction.html">Potassium Correction</a>
+                    <a href="reticulocyte_index.html">Reticulocyte Index</a>
+                    <a href="nutrition.html" onclick="nutritionRER()">Nutrition RER</a>
+                    <a href="norepinefrine.html" onclick="norepinephrineCRI()">Norepinefrine CRI</a>
+                    <a href="GeneralCRI.html" onclick="generalCRI()">General CRI</a>
+                    <a href="Hypernatremia.html" onclick="hypernatremiaCorrection()">Hypernatremia Correction</a>
+                    <a href="#" onclick="transfusionCalculation()">Transfusion</a>
+                    <a href="#" onclick="infusionTherapy()">Fluid Therapy</a>
+                    <a href="#" onclick="pillsCalculator()">Pills Counter</a>
+                </div>
+            </div>
+
+            <!-- Button for Poison Calculator -->
+            <button class="navbar-button" onclick="poisonCalculator()">Poison App</button>
+
+            <!-- Button for Bloodwork Analysis -->
+            <button class="navbar-button" onclick="bloodworkAnalysis()">BloodWork</button>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <!-- Dark Mode Toggle (moon symbol) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <a href="#" onclick="switchToEnglish()">
+                    <img src="flag-icon.png" alt="Switch to English" title="Switch to English">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Veterinary Calculator</h1>
+        <p>Dedicated to all exhausted shift workers who needs double checking their results...</p>
+        <!-- Update the button's onclick to call the emergencyDrugCalculator function -->
+        <button class="cta-button" onclick="emergencyDrugCalculator()">Emergency Drugs Calculator</button>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <img src="calc-icon.png" alt="Calculator Icon">
+            <h2>Clinical Calculations</h2>
+            <p>Quickly calculate dosages, nutrition, and more with our easy-to-use tools.</p>
+        </div>
+        <div class="feature">
+            <img src="bloodwork-icon.png" alt="Bloodwork Analysis Icon">
+            <h2>Bloodwork Analysis</h2>
+            <p>Upload results to get instant insights and recommendations.</p>
+        </div>
+        <!-- Add more features as needed -->
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works ?</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Select the calculator type you need.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Enter the required parameters.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Hit calculate button!</p>
+            </div>
+            <!-- Add more steps as needed -->
+        </div>
+    </section>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

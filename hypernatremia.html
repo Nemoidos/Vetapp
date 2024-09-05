@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinární Kalkulačka</title>
+    <link rel="stylesheet" href="calculator1.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Navbar Left Section -->
+        <div class="navbar-left">
+            <!-- Dropdown for Clinical Calculations -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown('clinicalDropdown')">Clinical Calculators</button>
+                <div class="dropdown-content" id="clinicalDropdown">
+                    <a href="potassium_correction.html">Potassium Correction</a>
+                    <a href="reticulocyte_index.html">Reticulocyte Index</a>
+                    <a href="nutrition.html" onclick="nutritionRER()">Nutrition RER</a>
+                    <a href="norepinefrine.html" onclick="norepinephrineCRI()">Norepinefrine CRI</a>
+                    <a href="GeneralCRI.html" onclick="generalCRI()">General CRI</a>
+                    <a href="Hypernatremia.html" onclick="hypernatremiaCorrection()">Hypernatremia Correction</a>
+                    <a href="#" onclick="transfusionCalculation()">Transfusion</a>
+                    <a href="#" onclick="infusionTherapy()">Fluid Therapy</a>
+                    <a href="#" onclick="pillsCalculator()">Pills Counter</a>
+                    <a href="emergency_calculator.html" onclick="emergency_calculator()">Emergency Calculator</a>
+                </div>
+            </div>
+
+            <!-- Button for Poison Calculator -->
+            <button class="navbar-button" onclick="poisonCalculator()">Poison App</button>
+
+            <!-- Button for Bloodwork Analysis -->
+            <button class="navbar-button" onclick="bloodworkAnalysis()">BloodWork</button>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <!-- Dark Mode Toggle (moon symbol) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+             <!-- Home Button (House Icon) -->
+            <button id="home-button" onclick="window.location.href='index.html'" title="Home">
+                🏠
+            </button>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <a href="#" onclick="switchToEnglish()">
+                    <img src="flag-icon.png" alt="Switch to English" title="Switch to English">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main id="hypernatremia-container" class="calculator-section">
+        <h2>Hypernatremia Correction Calculator</h2>
+
+        <!-- Sodium Concentration Input -->
+        <div class="input-group">
+            <label for="na-concentration-hyper">Na+ Concentration (mmol/l):</label>
+            <input type="number" id="na-concentration-hyper" placeholder="Enter Na+ concentration">
+        </div>
+
+        <!-- Speed Input -->
+        <div class="input-group">
+            <label for="speed-hyper">Correction Speed (mmol/h):</label>
+            <input type="number" id="speed-hyper" value="0.5" placeholder="Enter speed">
+        </div>
+
+        <!-- Weight Input -->
+        <div class="input-group">
+            <label for="weight-hyper">Weight (kg):</label>
+            <input type="number" id="weight-hyper" placeholder="Enter weight in kg">
+        </div>
+
+        <!-- Fluid Selection -->
+        <div class="input-group">
+            <span>Select Fluid:</span>
+            <div>
+                <label>
+                    <input type="radio" id="fluid-glucose-hyper" name="fluid-selection-hyper" value="0" checked>
+                    5% Glucose
+                </label>
+                <label>
+                    <input type="radio" id="fluid-plasmalye-hyper" name="fluid-selection-hyper" value="140">
+                    Plasmalye
+                </label>
+                <label>
+                    <input type="radio" id="fluid-ringerfundin-hyper" name="fluid-selection-hyper" value="145">
+                    Ringerfundin
+                </label>
+                <label>
+                    <input type="radio" id="fluid-hartman-hyper" name="fluid-selection-hyper" value="130">
+                    Hartman
+                </label>
+                <label>
+                    <input type="radio" id="fluid-saline-hyper" name="fluid-selection-hyper" value="154">
+                    0.9% NaCl
+                </label>
+            </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calculate-hyper-btn">Calculate</button>
+
+        <!-- Results Display -->
+        <div id="hypernatremia-results" class="resultsHypernatremia"></div>
+    </main>
+
+    <script src="calculator1.js"></script>
+</body>
+</html>
